@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Temperatura</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdf6e3; text-align: center; }
+    #app { margin: 50px auto; width: 400px; background: #fff; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>Conversor de Temperatura</h2>
+    <input type="number" id="celsius" placeholder="Celsius" oninput="convertTemp('C')"> °C =
+    <input type="number" id="fahrenheit" placeholder="Fahrenheit" oninput="convertTemp('F')"> °F
+  </div>
+  <script>
+    function convertTemp(scale){
+      if(scale === 'C'){
+        let c = document.getElementById("celsius").value;
+        document.getElementById("fahrenheit").value = (c * 9/5) + 32;
+      } else {
+        let f = document.getElementById("fahrenheit").value;
+        document.getElementById("celsius").value = ((f - 32) * 5/9).toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>
